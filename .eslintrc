@@ -1,0 +1,20 @@
+{
+	"root": true,
+	"extends": "@react-native-community",
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "import"],
+	"rules": {
+		"import/order": 2,
+		"quotes": [2, "double", { "avoidEscape": true }]
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"rules": {
+				"@typescript-eslint/no-shadow": ["error"],
+				"no-shadow": "off",
+				"no-undef": "off"
+			}
+		}
+	]
+}

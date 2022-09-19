@@ -1,0 +1,57 @@
+{
+	"name": "tddapp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"android": "react-native run-android",
+		"ios": "react-native run-ios",
+		"start": "react-native start",
+		"test": "jest",
+		"prepare": "husky install",
+		"lint": "eslint --quiet . --ext .js,.jsx,.ts,.tsx",
+		"pretty": "prettier --write --config .prettierrc *.js **/**/*.{js,ts,tsx}",
+		"lint:fix": "eslint --quiet **/**.{ts,tsx} --fix",
+		"analyze": "cross-env BUNDLE_ANALYZE=true npm run build",
+		"analyze-code": "npm run test && npm run pretty && npm run lint:fix && npm run lint"
+	},
+	"dependencies": {
+		"react": "18.1.0",
+		"react-native": "0.70.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.9",
+		"@babel/runtime": "^7.12.5",
+		"@react-native-community/eslint-config": "^3.1.0",
+		"@testing-library/jest-native": "^4.0.12",
+		"@testing-library/react-native": "^11.1.0",
+		"@tsconfig/react-native": "^2.0.2",
+		"@types/jest": "^26.0.23",
+		"@types/react-native": "^0.70.0",
+		"@types/react-test-renderer": "^18.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.37.0",
+		"@typescript-eslint/parser": "^5.37.0",
+		"babel-jest": "^26.6.3",
+		"eslint": "^7.0",
+		"eslint-plugin-import": "^2.26.0",
+		"husky": "^8.0.1",
+		"jest": "^26.6.3",
+		"metro-react-native-babel-preset": "^0.72.1",
+		"prettier": "^2.7.1",
+		"react-test-renderer": "18.1.0",
+		"typescript": "^4.8.3"
+	},
+	"jest": {
+		"preset": "react-native",
+		"setupFilesAfterEnv": [
+			"./jest-setup-after-env.js"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		]
+	}
+}
